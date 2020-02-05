@@ -4,7 +4,7 @@
 #include "Framework/Input.h"
 #include <string.h>
 #include <iostream>
-
+#include <SFML/System/Vector2.hpp>
 
 class Level{
 public:
@@ -26,7 +26,10 @@ private:
 
 	//Moving circle vars
 	sf::CircleShape circle;
-	float speed;
+	sf::Vector2<float>	speed;
+	sf::Vector2<int>	dir;
+	
+	
 
 
 };
