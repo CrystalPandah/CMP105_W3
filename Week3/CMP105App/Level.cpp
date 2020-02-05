@@ -28,60 +28,40 @@ Level::~Level()
 // handle user input
 void Level::handleInput(float dt)
 {
-	/*if (input->isKeyDown(sf::Keyboard::D) && !input->isKeyDown(sf::Keyboard::A))
+	if (input->isKeyDown(sf::Keyboard::Right) && !input->isKeyDown(sf::Keyboard::Left))
 	{
-		//Update x velocivy
-		speed = 70;
-
+		//Update x speed
+		speed.x = 70;
 	}
-	else if (input->isKeyDown(sf::Keyboard::A) && !input->isKeyDown(sf::Keyboard::D))
+	else if (input->isKeyDown(sf::Keyboard::Left) && !input->isKeyDown(sf::Keyboard::Right))
 	{
-
-		//Update x velocity
-		speed = -70;
-
-
+		//Update x speed
+		speed.x = -70;
 	}
-	else if (!input->isKeyDown(sf::Keyboard::A) && !input->isKeyDown(sf::Keyboard::D))
+	else
 	{
-
-		//Update x velocity
-		speed = 0;
-
-
+		//Update x speed
+		speed.x = 0;
 	}
 
-	if (input->isKeyDown(sf::Keyboard::W))
+	if (input->isKeyDown(sf::Keyboard::Up) && !input->isKeyDown(sf::Keyboard::Down))
 	{
+		//Update y speed
+		speed.y = -70;
+	}
+	else if (!input->isKeyDown(sf::Keyboard::Up) && input->isKeyDown(sf::Keyboard::Down))
+	{
+		//Update y speed
+		speed.y = 70;
+	}
+	else
+	{
+		//Update y speed
+		speed.y = 0;
+	}
 
-		//Update x velocivy
-		speed = -70;
 
-	}*/
-	//else if (!input->isKeyDown(sf::Keyboard::W))
-	//{
-
-
-	//	//Update x velocivy
-	//	velocity.y = 0;
-	//}
-
-	//if (+ is pressed)
-	/*{
-		if (speed is positive)
-		 add speed
-		if (speed is negative)
-		 remove speed
-	}*/
-	//if (- is pressed)
-	/*{
-		if (speed is positive)
-		 remove speed
-		if (speed is negative)
-		 add speed speed
-	}*/
-
-	if (input->isKeyDown(sf::Keyboard::Add) && !input->isKeyDown(sf::Keyboard::Subtract))
+	/*if (input->isKeyDown(sf::Keyboard::Add) && !input->isKeyDown(sf::Keyboard::Subtract))
 	{
 		speed.x = speed.x + 25; 
 		speed.y = speed.y + 25; 
@@ -90,15 +70,9 @@ void Level::handleInput(float dt)
 	{
 		speed.x = speed.x - 25;
 		speed.y = speed.y - 25;
-	}
+	}*/
 
-	/*{
-		 add speed
-	}*/
-	//if (- is pressed)
-	/*{
-		remove speed
-	}*/
+
 }
 
 // Update game objects
@@ -138,7 +112,7 @@ void Level::update(float dt)
 		dir.y = 1;
 	}	
 
-	if (speed.x > 500)
+	/*if (speed.x > 500)
 	{
 		speed.x = 500;
 	}
@@ -154,7 +128,7 @@ void Level::update(float dt)
 	else if (speed.y < 75)
 	{
 		speed.y = 75;
-	}
+	}*/
 
 	//Update/move circle
 	circle.move(speed.x*dt*dir.x, speed.y*dt*dir.y);
